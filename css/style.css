@@ -1,0 +1,19 @@
+.form-group {
+  width: 30%;
+  padding-top: 5%;
+    padding-right: 6%;
+  float: right;
+}
+
+#buttonContainer{
+    padding-top: 5%;
+    padding-left: 2%;
+    float: left;
+}
+
+#images{
+width: 60%;
+    padding-top: 15%;
+    background: gray;
+    
+}
