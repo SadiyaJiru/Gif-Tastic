@@ -9,11 +9,11 @@ $( document ).ready(function() {
 function addNewButton(){
 
   $("#addGif").on("click", function(){
-  var action = $("#user-input").val().trim();
-  if (action == ""){
+  var userInput = $("#user-input").val().trim();
+  if (userInput == ""){
     return false; // added so user cannot add a blank button
   }
-  topics.push(action);
+  topics.push(userInput);//push the users input as a button into the array
   displayBtns();
   return false;
   });
@@ -24,7 +24,7 @@ function displayBtns(){
     // $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the gifResults
     for (var i = 0; i < topics.length; i++){ //loop through the array
         var gifButton = $("<button>"); //create a new gif button in html
-        gifButton.addClass("action"); //create a class called ation
+        gifButton.addClass("userInput"); //create a class called ation
         gifButton.addClass("btn btn-primary") //
         gifButton.attr("data-name", topics[i]); 
         gifButton.text(topics[i]);
@@ -34,8 +34,8 @@ function displayBtns(){
 
   // Function that displays all of the gifs
   function displayGifs(){
-      var action = $(this).attr("data-name");
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + action + "&api_key=3EXHyNptM9m6Q9yAhAzpjibJWHq9P8Oq&limit=5";
+      var userInput = $(this).attr("data-name");
+      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + userInput + "&api_key=3EXHyNptM9m6Q9yAhAzpjibJWHq9P8Oq&limit=5";
       console.log(queryURL); // displays the constructed url
       $.ajax({
           url: queryURL,
@@ -74,7 +74,7 @@ function displayBtns(){
   displayBtns(); // displays list of topics already created
   addNewButton();
   // Document Event Listeners
-  $(document).on("click", ".action", displayGifs);
+  $(document).on("click", ".userInput", displayGifs);
   $(document).on("click", ".image", function(){
       var state = $(this).attr('data-state');
       if ( state == 'still'){
