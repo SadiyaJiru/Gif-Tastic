@@ -44,7 +44,7 @@ $(document).ready(function() {
     function displayGifs() {
     var userInput = $(this).attr("data-name");
     var queryURL =
-      "http://api.giphy.com/v1/gifs/search?q=" +
+      "https://api.giphy.com/v1/gifs/search?q=" +
       userInput + "&api_key=3EXHyNptM9m6Q9yAhAzpjibJWHq9P8Oq&limit=10";
     // console.log(queryURL); 
 
