@@ -10,7 +10,8 @@ $(document).ready(function() {
     "Macarena",
     "Hip Hop",
     "Bachata",
-    "Zumba"
+    "Zumba",
+    "Eskista"
   ];
   // Creating Functions & Methods
   // Function that displays all gif buttons
@@ -29,6 +30,8 @@ $(document).ready(function() {
       return false;
     });
   }
+  
+  addNewButton()
   //displays all of the buttons by appending the new ones
   function displayBtns() {
     $("#gifButtonsView").empty(); // prevents duplication when a new button is added
