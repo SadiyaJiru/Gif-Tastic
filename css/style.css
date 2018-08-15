@@ -1,19 +1,29 @@
-.form-group {
-  width: 30%;
-  padding-top: 5%;
-    padding-right: 6%;
-  float: right;
+body{
+background: #c4c9d1;
 }
+#gifButtonsView{
+  float: left;
+  width: 60%;
 
-#buttonContainer{
-    padding-top: 5%;
-    padding-left: 2%;
-    float: left;
 }
+.myForm{
+ float: left;
+ width: 20%;
+}
+.myJumbotron{
+background: url("../assets/images/pink.png");
+font-family: 'Jua', sans-serif;
+text-align: center;
+color: white;
+font-size: 150%;
 
-#images{
-width: 60%;
-    padding-top: 15%;
-    background: gray;
-    
+ }
+ .action{
+  margin-bottom: 5px;
+  background: #d60288;
+border: solid gray; }
+
+#addGif{
+  border: solid gray; 
+  background: #d60288;
 }
