@@ -12,7 +12,8 @@ $(document).ready(function() {
     "Bachata",
     "Zumba",
     "Eskista",
-    "Robot Dance"
+    "Robot Dance",
+    "Touch Down Dance"
   ];
 
     function displayBtns() {
