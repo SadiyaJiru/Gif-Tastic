@@ -13,6 +13,21 @@ $(document).ready(function() {
     "Zumba",
     "Eskista"
   ];
+
+    //displays all of the buttons by appending the new ones
+    function displayBtns() {
+        $("#gifButtonsView").empty(); // prevents duplication when a new button is added
+        // $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the gifResults
+        for (var i = 0; i < topics.length; i++) {
+          //loop through the array
+          var gifButton = $("<button>"); //create a new gif button in html
+          gifButton.addClass("userInput"); //create a class called ation
+          gifButton.addClass("btn btn-primary"); //
+          gifButton.attr("data-name", topics[i]);
+          gifButton.text(topics[i]);
+          $("#gifButtonsView").append(gifButton);
+        }
+      }
   // Creating Functions & Methods
   // Function that displays all gif buttons
 
@@ -31,21 +46,7 @@ $(document).ready(function() {
     });
   }
   
-  addNewButton()
-  //displays all of the buttons by appending the new ones
-  function displayBtns() {
-    $("#gifButtonsView").empty(); // prevents duplication when a new button is added
-    // $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the gifResults
-    for (var i = 0; i < topics.length; i++) {
-      //loop through the array
-      var gifButton = $("<button>"); //create a new gif button in html
-      gifButton.addClass("userInput"); //create a class called ation
-      gifButton.addClass("btn btn-primary"); //
-      gifButton.attr("data-name", topics[i]);
-      gifButton.text(topics[i]);
-      $("#gifButtonsView").append(gifButton);
-    }
-  }
+
 
   // Function that displays all of the gifs
   function displayGifs() {
@@ -91,6 +92,8 @@ $(document).ready(function() {
     });
   }
   displayBtns(); // displays list of topics already created
+  addNewButton()
+
   // Document Event Listeners
   $(document).on("click", ".userInput", displayGifs);
   $(document).on("click", ".image", function() {
