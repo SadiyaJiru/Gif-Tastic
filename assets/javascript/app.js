@@ -49,8 +49,7 @@ $(document).ready(function() {
     var userInput = $(this).attr("data-name");
     var queryURL =
       "http://api.giphy.com/v1/gifs/search?q=" +
-      userInput +
-      "&api_key=3EXHyNptM9m6Q9yAhAzpjibJWHq9P8Oq&limit=5";
+      userInput + "&api_key=3EXHyNptM9m6Q9yAhAzpjibJWHq9P8Oq&limit=10";
     console.log(queryURL); // displays the constructed url
     $.ajax({
       url: queryURL,
@@ -102,6 +101,4 @@ $(document).ready(function() {
       $(this).attr("data-state", "still");
     }
   });
-  addNewButton();
-
 });
