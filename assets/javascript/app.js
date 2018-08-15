@@ -8,30 +8,26 @@ $(document).ready(function() {
     "Milly Rock",
     "Ballet",
     "Macarena",
-    "Hip Hop",
+    "Hip Hop Dance",
     "Bachata",
     "Zumba",
-    "Eskista"
+    "Eskista",
+    "Robot Dance"
   ];
 
-    //displays all of the buttons by appending the new ones
     function displayBtns() {
         $("#gifButtonsView").empty(); // prevents duplication when a new button is added
-        // $("#gifButtonsView").empty(); // erasing anything in this div id so that it doesnt duplicate the gifResults
+
         for (var i = 0; i < topics.length; i++) {
           //loop through the array
           var gifButton = $("<button>"); //create a new gif button in html
-          gifButton.addClass("userInput"); //create a class called ation
+          gifButton.addClass("userInput"); 
           gifButton.addClass("btn btn-primary"); //
           gifButton.attr("data-name", topics[i]);
           gifButton.text(topics[i]);
           $("#gifButtonsView").append(gifButton);
         }
       }
-  // Creating Functions & Methods
-  // Function that displays all gif buttons
-
-  // Creates a new button
   function addNewButton() {
     $("#addGif").on("click", function() {
       var userInput = $("#user-input")
@@ -45,22 +41,19 @@ $(document).ready(function() {
       return false;
     });
   }
-  
-
-
-  // Function that displays all of the gifs
-  function displayGifs() {
+    function displayGifs() {
     var userInput = $(this).attr("data-name");
     var queryURL =
       "http://api.giphy.com/v1/gifs/search?q=" +
       userInput + "&api_key=3EXHyNptM9m6Q9yAhAzpjibJWHq9P8Oq&limit=10";
     console.log(queryURL); // displays the constructed url
+
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
       console.log(response); // console test to make sure something returns
-      $("#gifsView").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
+    //   $("#gifsView").empty(); // erasing anything in this div id so that it doesnt keep any from the previous click
       var gifResults = response.data; //shows results of gifs
       if (gifResults == "") {
         alert("There isn't a gif for this selected button");
