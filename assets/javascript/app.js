@@ -25,7 +25,7 @@ function displayBtns(){
     for (var i = 0; i < topics.length; i++){ //loop through the array
         var gifButton = $("<button>"); //create a new gif button in html
         gifButton.addClass("action"); //create a class called ation
-        gifButton.addClass("btn btn-info") //
+        gifButton.addClass("btn btn-primary") //
         gifButton.attr("data-name", topics[i]); 
         gifButton.text(topics[i]);
         $("#gifButtonsView").append(gifButton); 
