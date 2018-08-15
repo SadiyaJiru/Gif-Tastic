@@ -91,7 +91,8 @@ $(document).ready(function() {
       }
     });
   }
-  displayBtns(); // displays list of topics already created
+  //function calls
+  displayBtns(); // display buttons that were created 
   addNewButton()
 
   // Document Event Listeners
